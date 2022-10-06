@@ -1,11 +1,18 @@
 package main;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import LoginPackage.Login;
+import LoginPackage.LoginProxy;
+import LoginPackage.LoginSubject;
 
 public class Client {
 	
@@ -14,6 +21,9 @@ public class Client {
 	private static JPasswordField passText;
 	private static JButton button;
 	private static JTextField userText;
+	
+	
+	Login login = new LoginSubject();
 	
 	
 	private static void startGui() {
@@ -44,10 +54,31 @@ public class Client {
 		
 		button = new JButton("Submit!");
 		button.setBounds(125, 80, 80, 25);
+		button.addActionListener(null);
 		
 		panel.add(button);
 	
 		frame.setVisible(true);
+	}
+	
+	static class Action implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			//JtextField to String & JPasswordField->charArray->String
+			String username =  (userText.getText()).toUpperCase();
+			
+			String password = String.copyValueOf(passText.getPassword());
+			
+			// TODO Auto-generated method stub
+			try {
+				login.validate(username, password);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		
 	}
 	
 	public static void main(String[] args) {

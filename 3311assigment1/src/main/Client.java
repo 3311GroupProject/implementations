@@ -1,4 +1,4 @@
-import java.awt.event.ActionListener;
+package main;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -7,29 +7,16 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Proxy extends Login{
-
-	private LoginService loginservice;
+public class Client {
 	
 	private static JLabel userLabel;
 	private static JLabel passLabel;
 	private static JPasswordField passText;
 	private static JButton button;
 	private static JTextField userText;
-
 	
-	public LoginService getInstance() {
-		if (loginservice == null)
-		{
-			loginservice = new LoginService();
-		}
-		loginservice.getInstance();
-		return loginservice;
-		
-	}
-
-	@Override
-	public void LoginService() {
+	
+	private static void startGui() {
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
 		frame.setSize(350, 150);
@@ -61,19 +48,10 @@ public class Proxy extends Login{
 		panel.add(button);
 	
 		frame.setVisible(true);
-		loginservice.LoginService();
-	}
-
-	@Override
-	public boolean Validate() {
-		// TODO Auto-generated method stub
-		loginservice.Validate();
-		return false;
 	}
 	
-	
-
-	
-	
-	
+	public static void main(String[] args) {
+		startGui();
+	}
 }
+

@@ -72,7 +72,7 @@ public class Client {
 			
 			// TODO Auto-generated method stub
 			try {
-				login.validate(username, password);
+				//login.validate(username, password);
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<dbUsers>
+	<Users>
+		<Username>Admin1</Username>
+		<Password>12345</Password>
+	</Users>
+	<Users>
+		<Username>Admin2</Username>
+		<Password>qwertyuiop</Password>
+	</Users>
+</dbUsers>
+	
